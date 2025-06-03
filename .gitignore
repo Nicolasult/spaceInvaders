@@ -1,0 +1,18 @@
+# Environnement virtuel
+venv/
+
+# Fichiers compilés
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Fichiers de logs et bases de données locales
+*.log
+*.sqlite3
+
+# Fichiers système / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
