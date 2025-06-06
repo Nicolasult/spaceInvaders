@@ -8,8 +8,7 @@ class Game:
 
     def run(self):
         self.player.update()
-
-
+        
         self.player.draw(screen)
         self.player.sprite.lasers.draw(screen)
 
