@@ -104,6 +104,7 @@ class Game:
                 #obstacle collisions
                 if pygame.sprite.spritecollide(laser, self.blocks, True):
                     laser.kill()
+                    pass
                 # alien collisions
                 aliens_hit = pygame.sprite.spritecollide(laser, self.aliens, True)
                 if aliens_hit:
@@ -149,6 +150,12 @@ class Game:
         score_rect = score_surf.get_rect(topleft = (10, -10))
         screen.blit(score_surf, score_rect)
 
+    def victory_message(self):
+        if not self.aliens.sprites():
+            victory_surf = self.font.render("You won", False, "white")
+            victory_rect = victory_surf.get_rect(center = (screen_width /2, screen_height / 2))
+            screen.blit(victory_surf, victory_rect)
+
     def run(self):
         self.player.update()
         self.aliens.update(self.alien_direction)
@@ -167,6 +174,7 @@ class Game:
         self.extra.draw(screen)
         self.display_lives()
         self.display_score()
+        self.victory_message()
 
 if __name__ == "__main__":
     pygame.init()
